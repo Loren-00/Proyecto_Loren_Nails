@@ -1,0 +1,233 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+--lila:#c8a2ff;
+--rosado:#ffd6e8;
+--rosado-fuerte:#f7a8c4;
+--blanco:#ffffff;
+--texto:#4b3d5a;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+background: linear-gradient(to bottom, #F8C8DC, #DCD0FF);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(255,255,255,0.3);
+backdrop-filter:blur(10px);
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo img{
+width:50px;
+height:50px;
+}
+
+.menu ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+.menu a{
+text-decoration:none;
+color:var(--texto);
+font-weight:500;
+padding:8px 15px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.menu a:hover{
+background:var(--blanco);
+color:var(--rosado-fuerte);
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.form-section{
+background:rgba(255,255,255,0.35);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:40px;
+width:600px;
+max-width:100%;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+animation:flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+form h2{
+text-align:center;
+margin-bottom:30px;
+color:var(--texto);
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo{
+display:flex;
+flex-direction:column;
+margin-bottom:20px;
+}
+
+label{
+margin-bottom:5px;
+font-weight:500;
+color:var(--texto);
+}
+
+select,
+input{
+padding:10px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:14px;
+transition:0.3s;
+}
+
+select:focus,
+input:focus{
+outline:none;
+border-color:var(--lila);
+box-shadow:0 0 5px rgba(200,162,255,0.5);
+}
+
+/* =========================
+   HORARIOS
+========================= */
+
+.horarios{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:10px;
+}
+
+.horarios button{
+padding:10px;
+border:none;
+border-radius:10px;
+background:var(--blanco);
+cursor:pointer;
+font-weight:500;
+transition:0.3s;
+}
+
+.horarios button:hover{
+background:linear-gradient(135deg,#F8C8DC,#DCD0FF);
+color:white;
+transform:scale(1.05);
+}
+
+/* botón seleccionado */
+
+.horarios button.active{
+background:linear-gradient(135deg,#F8C8DC,#DCD0FF);
+color:white;
+}
+
+/* =========================
+   BOTÓN ENVIAR
+========================= */
+
+button[type="submit"]{
+width:100%;
+padding:12px;
+border:none;
+border-radius:25px;
+background:linear-gradient(135deg,#F8C8DC,#DCD0FF);
+font-size:16px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button[type="submit"]:hover{
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+.menu ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+}
+
+@media(max-width:500px){
+
+.form-section{
+padding:30px 20px;
+}
+
+.horarios{
+grid-template-columns:repeat(2,1fr);
+}
+
+}

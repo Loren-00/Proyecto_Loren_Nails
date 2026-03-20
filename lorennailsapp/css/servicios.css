@@ -1,0 +1,183 @@
+
+body{
+    background: linear-gradient(to bottom, #F8C8DC, #DCD0FF);
+    min-height:100vh;
+
+}
+
+:root{
+    --lila: #c8a2ff;
+    --rosado: #ffd6e8;
+    --rosado-fuerte: #f7a8c4;
+    --blanco: #ffffff;
+    --texto: #4b3b5a;
+    --sombra: rgba(0,0,0,0.08);
+}
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+:root{
+    --lila: #c8a2ff;
+    --rosado: #ffd6e8;
+    --rosado-fuerte: #f7a8c4;
+    --blanco: #ffffff;
+    --texto: #4b3d5a;
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--rosado), var(--lila));
+    padding: 15px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+   
+
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+
+}
+
+.menu a:hover{
+    background: var(--blanco);
+    color: var(--rosado-fuerte);
+
+}
+
+@media (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .menu ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+
+/* ===============================
+   CONTENEDOR DEL CATALOGO
+================================= */
+.catalogo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 100px;
+    padding: 50px;
+}
+
+/* ===============================
+   TARJETAS DE SERVICIO
+================================= */
+.card{
+    background: var(--blanco);
+    border-radius: 30px;
+    box-shadow: 0 8px 20px var(--sombra);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   IMAGEN DEL SERVICIO
+================================= */
+.card img{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    background: #f3f3f3; /* Placeholder si no hay imagen */
+}
+
+/* ===============================
+   TITULO DEL SERVICIO
+================================= */
+.card h3{
+    color: var(--texto);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   DESCRIPCION
+================================= */
+.card p{
+    font-size: 14px;
+    color: #6d5b7b;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* ===============================
+   PRECIO
+================================= */
+.precio{
+    display: inline-block;
+    background: linear-gradient(135deg, var(--lila), var(--rosado-fuerte));
+    color: var(--blanco);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .menu a{
+        margin: 0 10px;
+    }
+
+    .catalogo{
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card img{
+        height: 150px;
+    }
+}
